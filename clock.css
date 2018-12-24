@@ -1,0 +1,159 @@
+.closePopup{
+	width: fit-content;
+	background-color: red;
+	color: white;
+	padding: 2px 5px 2px 5px;
+	font-size: 15px;
+	border-radius: 9px;
+	position: absolute;
+	font-family: sans-serif;
+	right: -10px;top: -5px;
+	cursor:pointer;
+}
+.listAll > table {
+    counter-reset: rowNumber;
+}
+
+.listAll > table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+.listAll > table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+.meetingDisplay{
+	border:1px solid #ccc;
+    box-shadow: 0px 0px 10px;
+    border-radius: 10px;
+	padding:3px;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+    font-family: monospace;
+}
+.arrow-down {
+    position: relative;
+    margin: 15px;
+    box-sizing: border-box;
+    background: #666;
+    box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+.arrow-down:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -12px;
+    top: -16px;
+    left: 50%;
+    box-sizing: border-box;
+    border: 8px solid black;
+    border-color: transparent transparent #666 #666;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+.shadow-element{
+	display:none;
+	position:  absolute;
+	background-color: #000;
+	bottom: 1px;
+	left: 1px;
+	text-align: center;
+	padding-top: auto;
+	z-index:1;
+	opacity: 0.85;
+	border-radius:50%;
+}
+.hover-element{
+	display:none;
+	margin-bottom: 45%;
+	position:absolute;
+	z-index:2;
+	bottom:0;
+	text-align:center;
+	width: 100%;
+}
+.iasClockDiv:hover > .shadow-element,.iasClockDiv:hover > .hover-element{
+	display:block;
+}
+.c_form{
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    background: #ccc;
+    z-index: 3;
+    top: 40%;
+    margin-left: 40%;
+    margin-right: auto;
+}
+.listAll{
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+	width:50%;
+    z-index: 3;
+    max-height:95%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.shadow-box{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+	z-index:2;
+}
+
+.listAll > table,.listAll > table td,.listAll > table th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.listAll > table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.listAll > table th,.listAll > table td {
+  padding: 4px;
+}
+.delete-icon{
+	font-size: 15px;
+    font-family: sans-serif;
+    color: red;
+	cursor:pointer;
+}
+.listAll > table td:first-child {
+    width: 30px;
+	text-align:center;
+}
+.listAll > table td:nth-child(2),.listAll > table td:nth-child(3){
+	width: 50px;
+}
+.listAll > table td:last-child{
+	width: 30px;
+	text-align: center;
+}
+.plusBtn{
+	margin-right: 5px;
+}
+.iasClockCanvas{
+	border:1px solid #000000;
+	border-radius:50%;
+	box-shadow: 0px 0px 8px;
+    background-color: white;
+}
+.iasClockDiv{
+	position: absolute;
+	bottom:10px;
+	right:10px;
+}
