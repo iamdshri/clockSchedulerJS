@@ -130,7 +130,6 @@ function meetingArea(ctx,radius){
 	for(i=0;i<meetingArr.length;i++){
 		ctx.beginPath();
 		ctx.lineWidth=4;
-		
 		start_arr=meetingArr[i][0].split(':');
 		s_hr=parseInt(start_arr[0]);
 		s_min=parseInt(start_arr[1]);
@@ -144,7 +143,8 @@ function meetingArea(ctx,radius){
 		else{
 			loop=true;
 		}
-		if(s_hr<12 && e_hr>=12 && !loop){
+		
+		if(s_hr<12 && e_hr>=12 && loop){
 			grd=ctx.createLinearGradient(0,0,10,0);
 			grd.addColorStop(0,"#c36a3e");
 			grd.addColorStop(1,"#4b2a63");
@@ -256,7 +256,7 @@ function delRow(obj,pos){
 function listAll(){
 	var table="<table>";
 	if(meetingArr.length==0){
-		table+="<tr><td>No meetings planned yet</td></tr>";
+		table+="<tr><th>No meetings planned yet</th></tr>";
 	}else{
 		table+="<tr><th>Sr.</th><th>Start</th><th>End</th><th>Message</th><th></th></tr>";
 	}
