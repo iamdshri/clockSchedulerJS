@@ -1,5 +1,5 @@
 # clockSchedulerJS
-(Beta Version)
+(Beta Version)<br>
 Display's a clock with highlighted scheduled area. Also has an alarm with notification for the scheduled time.
 
 ## USAGE Step-wise:::::::
