@@ -249,8 +249,8 @@ function delMeeting(pos){
 }
 function delRow(obj,pos){
 	if(confirm('Are you sure ?')){
-		$(obj).parent().parent().remove();
 		delMeeting(pos);
+		refreshList();
 	}
 }
 function listAll(){
@@ -266,7 +266,19 @@ function listAll(){
 	table+="</table>";
 	$('body').prepend("<div class='shadow-box'></div><div class='listAll'><div class='closePopup' onclick='hideList();'>X</div>"+table+"</div>");
 }
-
+function refreshList(){
+	var table="<table>";
+	if(meetingArr.length==0){
+		table+="<tr><th>No meetings planned yet</th></tr>";
+	}else{
+		table+="<tr><th>Sr.</th><th>Start</th><th>End</th><th>Message</th><th></th></tr>";
+	}
+	for(i=0;i<meetingArr.length;i++){
+		table+="<tr><td></td><td>"+meetingArr[i][0]+"</td><td>"+meetingArr[i][1]+"</td><td>"+meetingArr[i][2]+"</td><td><div class='delete-icon' onclick='delRow(this,\""+i+"\")'>x</div></td></tr>";
+	}
+	table+="</table>";
+	$('.listAll').html("<div class='closePopup' onclick='hideList();'>X</div>"+table+"");
+}
 function removeMeetingForm(){
 	$('.shadow-box').remove();
 	$('.c_form').remove();
