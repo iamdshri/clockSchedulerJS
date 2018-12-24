@@ -29,5 +29,5 @@ Display's a clock with highlighted scheduled area. Also has an alarm with notifi
   <img src="clock.png"/>
   <br>Easy Right :)
  </li>
- 
+ <li>There are 4 color bands used, as shown;<br> <img src="meetings.png"></li>
 </ol>
