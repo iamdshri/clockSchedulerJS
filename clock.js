@@ -233,7 +233,7 @@ function suceessMsg(){
 	$(function() {
     setTimeout(function() {
         $(".iasUT_"+ut).remove();
-    }, 5000);
+    }, 3000);
 });
 }
 //add meeting
