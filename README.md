@@ -30,5 +30,5 @@ Display's a clock with highlighted scheduled area. Also has an alarm with notifi
   <br>Easy Right :)
  </li>
  <li>There are 4 color bands used, as shown;<br> <img src="meetings.png"></li>
- <li>You can add your custom functions in `addMeeting` and `delMeeting`, to process data at the backend.</li>
+ <li>You can add your custom functions in `addMeeting` and `delMeeting` (<i>in clock.js</i>), to process data at the backend.</li>
  </ol>
