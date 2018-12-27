@@ -209,10 +209,11 @@ function alarm(){
 		
 		if(hr==(new Date()).getHours() && min==(new Date()).getMinutes()){
 			if($('.meet_'+i).length==0 && meetingArr[i].length!=4){
-				$('.myClock').prepend("<div class='meetingDisplay meet_"+i+"' style='max-width:"+canvas.width+";'><span style='        cursor: pointer;    position: absolute;    right: -8px;    background-color: red;    color: white;    padding: 0px 4px 1px 5px;    border-radius: 12px;    margin-top: -10px;' onclick='closePopUp("+i+");'>X</span>"+meetingArr[i][2]+"</div><div class='arrow-down meet_arrow_"+i+"'></div>");
+				$('.iasClockDiv').prepend("<div class='meetingDisplay meet_"+i+"' style='max-width:"+canvas.width+";'><span style='        cursor: pointer;    position: absolute;    right: -8px;    background-color: red;    color: white;    padding: 0px 4px 1px 5px;    border-radius: 12px;    margin-top: -10px;' onclick='closePopUp("+i+");'>X</span>"+meetingArr[i][2]+"</div><div class='arrow-down meet_arrow_"+i+"'></div>");
 				if(!tab_visible){
 					alert(meetingArr[i][2]);
 				}
+
 			}
 		}
 	}
@@ -238,6 +239,7 @@ function addMeeting(start,end,msg,ctx,radius){
 	drawLines(ctx,radius);
 	meetingArea(ctx,radius);
 	suceessMsg();
+	/*Add your function call*/
 }
 //del meeting
 function delMeeting(pos){
@@ -246,6 +248,7 @@ function delMeeting(pos){
 	drawLines(ctx,radius);
 	meetingArr.splice(position,1);
 	meetingArea(ctx,radius);
+	/*Add your function call*/
 }
 function delRow(obj,pos){
 	if(confirm('Are you sure ?')){
