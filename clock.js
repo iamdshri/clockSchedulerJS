@@ -2,7 +2,7 @@ var canvas = document.getElementById("iasClockCanvas");
 ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
-radius = radius * 0.90
+radius = radius * 0.90;
 minutes_flag=false;
 meetingArr=[];
 function drawLines(ctx,radius){
@@ -193,6 +193,7 @@ var vis = (function(){
     }
 })();
 var tab_visible = true;
+
 function alarm(){
 	vis(function(){
 		if(vis()){
@@ -210,10 +211,11 @@ function alarm(){
 		if(hr==(new Date()).getHours() && min==(new Date()).getMinutes()){
 			if($('.meet_'+i).length==0 && meetingArr[i].length!=4){
 				$('.iasClockDiv').prepend("<div class='meetingDisplay meet_"+i+"' style='max-width:"+canvas.width+";'><span style='        cursor: pointer;    position: absolute;    right: -8px;    background-color: red;    color: white;    padding: 0px 4px 1px 5px;    border-radius: 12px;    margin-top: -10px;' onclick='closePopUp("+i+");'>X</span>"+meetingArr[i][2]+"</div><div class='arrow-down meet_arrow_"+i+"'></div>");
-				if(!tab_visible){
+				var audio = new Audio('quite-impressed.mp3');
+				audio.play();
+				/*if(!tab_visible){
 					alert(meetingArr[i][2]);
-				}
-
+				}*/
 			}
 		}
 	}
@@ -226,7 +228,13 @@ function closePopUp(pos){
 }
 //success msg
 function suceessMsg(){
-	alert('Meeting has ben added');
+	var ut=(+ new Date());
+	$('body').prepend('<div class="iasSuccessMsgDiv iasUT_'+ut+'"><div class="iasSuccessMsg">Meeting has been added</div></div>');
+	$(function() {
+    setTimeout(function() {
+        $(".iasUT_"+ut).remove();
+    }, 5000);
+});
 }
 //add meeting
 function addMettingNow(){
