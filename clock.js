@@ -211,7 +211,7 @@ function alarm(){
 		if(hr==(new Date()).getHours() && min==(new Date()).getMinutes()){
 			if($('.meet_'+i).length==0 && meetingArr[i].length!=4){
 				$('.iasClockDiv').prepend("<div class='meetingDisplay meet_"+i+"' style='max-width:"+canvas.width+";'><span style='        cursor: pointer;    position: absolute;    right: -8px;    background-color: red;    color: white;    padding: 0px 4px 1px 5px;    border-radius: 12px;    margin-top: -10px;' onclick='closePopUp("+i+");'>X</span>"+meetingArr[i][2]+"</div><div class='arrow-down meet_arrow_"+i+"'></div>");
-				var audio = new Audio('quite-impressed.mp3');
+				var audio = new Audio('notify.mp3');
 				audio.play();
 				/*if(!tab_visible){
 					alert(meetingArr[i][2]);
